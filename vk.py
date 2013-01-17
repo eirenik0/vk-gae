@@ -31,9 +31,8 @@ class Auth(handler.Base):
       'client_secret': SECRET,
       'code': code})
     token = urlfetch.fetch(
-      url='https://api.instagram.com/oauth/access_token',
-      method=urlfetch.GET,
-      payload=payload).content
+      url='https://api.instagram.com/oauth/access_token?%s' % payload,
+      method=urlfetch.GET).content
     token_json = json.loads(token)
 
     token = token_json['access_token']
