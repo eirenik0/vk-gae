@@ -34,7 +34,7 @@ config['webapp2_extras.sessions'] = {
 logging.getLogger().setLevel(logging.DEBUG)
 application = webapp2.WSGIApplication([
   (r'/', Home),
-  (r'/vk/auth', 'vk.Auth'),
+  (r'/auth/vk', 'vk.Auth'),
   (r'/logout', Logout),
 
 ], debug=True, config=config)
